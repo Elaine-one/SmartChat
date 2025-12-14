@@ -1,0 +1,31 @@
+[theme]
+primaryColor = "#4287f5"
+backgroundColor = "#0e1117"
+secondaryBackgroundColor = "#1a1f2b"
+textColor = "#f0f2f6"
+
+[browser]
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8501
+
+[ui]
+hideTopBar = true
+
+[server]
+enableCORS = false
+enableXsrfProtection = false
+enableWebsocketCompression = true
+
+[runner]
+fastReruns = true
+
+[client]
+toolbarMode = "minimal"
+showSidebarButton = true
+showErrorDetails = false
+showSidebarNavigation = false
+
+[logger]
+level = "error"
+messageFormat = "%(asctime)s - %(name)s - %(levelname)s - %(message)s" 
