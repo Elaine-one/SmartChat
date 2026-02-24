@@ -1,0 +1,55 @@
+# 环境配置
+.env
+
+# Python 编译和缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 日志文件
+*.log
+logs/
+
+# Chainlit 运行产物
+.files/
+.chainlit/
+
+# 本地数据（向量库/历史库）
+data/
+pdf_cache/
+
+# 文档处理临时文件
+temp/
+
+# 本地上传持久化目录
+public/uploads/
+
+# 本地模型缓存/快照
+models--*/
+
+# Windows 下 Poppler 等外部工具
+tools/poppler*/
+
+# IDE 和编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 测试和覆盖率
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.venv
+docs/

@@ -1,0 +1,87 @@
+{
+    "api": {
+        "endpoint": "http://localhost:1314/api/chat",
+        "max_retries": 3,
+        "retry_delay": 1,
+        "timeout": 120
+    },
+    "cache": {
+        "enabled": true,
+        "ttl": 3600,
+        "max_entries": 100
+    },
+    "ui": {
+        "theme": "dark",
+        "max_message_display": 50,
+        "auto_scroll": true,
+        "scroll_batching_delay_ms": 80,
+        "scroll_batch_threshold": 6
+    },
+    "conversation": {
+        "max_history_messages": 10,
+        "cooldown_seconds": 1.0,
+        "post_generate_cooldown_seconds": 2.0,
+        "generating_watchdog_timeout": 5.0,
+        "concise_by_default": true
+    },
+    "document_processing": {
+        "enabled": true,
+        "vision_model": "granite3.2-vision:latest",
+        "api_endpoint": "http://localhost:1314/api/generate",
+        "supported_formats": ["pdf", "jpg", "jpeg", "png", "webp", "docx", "doc", "txt", "md", "csv"],
+        "max_pages": 10,
+        "temp_dir": "./temp",
+        "cache_size": 10,
+        "show_in_main_ui": false
+    },
+    "models": {
+        "qwen2.5:3b": {
+            "display_name": "Qwen 2.5-3B",
+            "description": "通义千问2.5-3B模型，适合中文对话，轻量高效",
+            "max_tokens": 4096,
+            "context_window": 8192,
+            "priority": 1
+        },
+        "deepseek-r1:8b": {
+            "display_name": "DeepSeek 8B",
+            "description": "深度求索8B模型，擅长中文理解和生成",
+            "max_tokens": 4096,
+            "context_window": 4096,
+            "priority": 2
+        },
+        "llama3.1:latest": {
+            "display_name": "Llama 3.1",
+            "description": "Meta最新Llama 3.1模型，多语言能力强",
+            "max_tokens": 4096,
+            "context_window": 8192,
+            "priority": 3
+        },
+        "granite3.2-vision:latest": {
+            "display_name": "Granite 3.2 Vision",
+            "description": "支持图像和文档分析的多模态模型",
+            "max_tokens": 4096,
+            "context_window": 8192,
+            "priority": 4
+        }
+    },
+    "agent": {
+        "max_iterations": 20,
+        "max_execution_time": 180,
+        "early_stopping_method": "generate",
+        "handle_parsing_errors": "输出格式不符合要求，请严格遵循 Thought/Action/Action Input/Observation/Final Answer 格式。",
+        "verbose": true
+    },
+    "search": {
+        "provider": "bing_lite",
+        "timeout": 15,
+        "count": 8
+    },
+    "auth": {
+        "enabled": true,
+        "default_user": "admin",
+        "default_password": "admin"
+    },
+    "telemetry": {
+        "disable_chromadb_telemetry": true
+    }
+}

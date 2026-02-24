@@ -1,0 +1,39 @@
+/* 自定义 CSS 美化 UI */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* 调整侧边栏背景 */
+/* .MuiDrawer-paper {
+    background-color: #1e1e1e !important;
+} */
+
+/* 优化消息气泡圆角 */
+.message-bubble {
+    border-radius: 12px !important;
+}
+
+/* 欢迎消息样式增强 */
+.welcome-message {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* 隐藏不必要的元素 */
+footer {
+    display: none !important;
+}
+
+/* 隐藏白色滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
