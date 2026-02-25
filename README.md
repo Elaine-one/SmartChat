@@ -13,6 +13,7 @@ SmartChat 是一个基于 **Chainlit** 开发的现代化智能聊天应用，�
   - 联网搜索能力（Bing Lite，免 Key）
   - 会话历史持久化
   - 动态配置面板
+- **知识库系统**：预定义高质量网站链接，提升搜索质量和可靠性
 
 ## 📂 项目结构
 
@@ -23,7 +24,7 @@ smart_chat/
 ├── llms/               # LLM 工厂
 │   └── factory.py      # 模型实例创建
 ├── tools/              # Agent 工具集
-│   ├── factory.py      # 工具工厂（搜索/计算/时间/Python）
+│   ├── factory.py      # 工具工厂（搜索/计算/时间/Python/知识库/网页抓取）
 │   └── retriever.py    # RAG 检索工具
 ├── vectorstores/       # 向量数据库
 │   └── chroma.py       # ChromaDB 管理器
@@ -42,7 +43,8 @@ app.py                  # Chainlit 应用入口
 config/
 ├── config.json         # 用户配置文件
 ├── config.example.json # 配置模板
-└── config.md           # 配置说明文档
+├── config.md           # 配置说明文档
+└── knowledge_base.json # 知识库配置
 docs/                   # 文档目录
 requirements.txt        # Python 依赖
 .env.example            # 环境变量模板
@@ -80,6 +82,7 @@ cp .env.example .env
 - `SMARTCHAT_API_ENDPOINT`: LLM API 端点（默认 http://localhost:1314/api/chat）
 - `SMARTCHAT_USER` / `SMARTCHAT_PASSWORD`: 登录凭据
 - `CHAINLIT_AUTH_SECRET`: 安全密钥（至少 32 字节）
+- `SMARTCHAT_EMBEDDING_MODEL_NAME`: Embedding 模型（默认 BAAI/bge-small-zh）
 
 ### 3. 配置模型
 
@@ -144,7 +147,8 @@ chainlit run app.py -w
   },
   "agent": {
     "max_iterations": 20,
-    "max_execution_time": 180
+    "max_execution_time": 180,
+    "early_stopping_method": "force"
   },
   "document_processing": {
     "enabled": true,
@@ -169,6 +173,16 @@ SMARTCHAT_API_ENDPOINT=http://localhost:1314/api/chat
 SMARTCHAT_EMBEDDING_MODEL_NAME=BAAI/bge-small-zh
 SMARTCHAT_CHROMA_DIR=./data/chroma_db
 ```
+
+### 知识库配置 (config/knowledge_base.json)
+
+知识库包含预定义的高质量网站链接，Agent 会优先查询知识库获取相关链接：
+
+- **天气查询**：中国天气网、2345天气网等
+- **新闻资讯**：百度新闻、新浪新闻、澎湃新闻等
+- **技术文档**：Python 官方文档、MDN Web 文档等
+- **财经金融**：新浪财经、东方财富网等
+- **百科知识**：百度百科、维基百科等
 
 ## 🛠️ 开发指南
 
@@ -205,15 +219,39 @@ SMARTCHAT_EMBEDDING_MODEL_NAME=BAAI/bge-large-zh
 - `BAAI/bge-large-zh`（效果更好，资源占用更大）
 - `sentence-transformers/all-MiniLM-L6-v2`（英文场景）
 
+### 扩展知识库
+
+编辑 `config/knowledge_base.json`，添加新的类别和链接：
+
+```json
+{
+  "new_category": {
+    "name": "新类别名称",
+    "description": "类别描述",
+    "links": [
+      {
+        "url": "https://example.com",
+        "name": "网站名称",
+        "description": "网站描述",
+        "keywords": ["关键词1", "关键词2"]
+      }
+    ]
+  }
+}
+```
+
 ## 📚 文档目录
 
 - [API 文档](docs/API.md) - 核心模块 API 说明
 - [依赖说明](docs/dependencies.md) - 依赖安装与常见问题
 - [技术面试指南](docs/interview_guide.md) - 架构设计与技术选型深度解析
+- [RAG 技术详解](docs/rag.md) - RAG 实现原理与优化策略
+- [Agent 技术详解](docs/agent.md) - ReAct Agent 设计与实现
 - [配置说明](config/config.md) - 配置文件详细说明
 
 ## 📝 版本历史
 
+- **v2.2**: 添加知识库系统，优化 Agent 工具调用流程，修复编码问题
 - **v2.1**: Chainlit 框架迁移，支持原生思维链展示，中文 Embedding 模型优化
 - **v2.0**: 全面架构重构，引入 LangChain 和 RAG
 - **v1.0**: 基础 Streamlit 聊天应用
