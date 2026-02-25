@@ -376,10 +376,6 @@ async def main(message: cl.Message):
     agent_executor = cl.user_session.get("agent")
     llm = cl.user_session.get("llm")
 
-    cb = cl.AsyncLangchainCallbackHandler(
-        stream_final_answer=True,
-        answer_prefix_tokens=["Final Answer"]
-    )
     session_context = _build_session_doc_context()
 
     if agent_executor:
@@ -389,11 +385,28 @@ async def main(message: cl.Message):
                 "请优先根据以下文档内容回答问题，如与常识冲突，以文档为准。\n\n"
                 f"{session_context}\n\n问题：{message.content}"
             )
-        res = await agent_executor.ainvoke(
-            {"input": agent_input, "chat_history": []},
-            config=RunnableConfig(callbacks=[cb])
-        )
-        if not cb.has_streamed_final_answer:
+        
+        # Agent 模式：先执行 Agent，收集结果
+        show_cot = cl.user_session.get("show_cot", True)
+        
+        if show_cot:
+            # 显示思维链：使用 Chainlit 回调自动显示
+            cb = cl.AsyncLangchainCallbackHandler(
+                stream_final_answer=True,
+                answer_prefix_tokens=["Final Answer"]
+            )
+            res = await agent_executor.ainvoke(
+                {"input": agent_input, "chat_history": []},
+                config=RunnableConfig(callbacks=[cb])
+            )
+            # 如果回调没有处理流式输出，手动发送
+            if not cb.has_streamed_final_answer:
+                await cl.Message(content=res["output"]).send()
+        else:
+            # 不显示思维链：直接获取结果
+            res = await agent_executor.ainvoke(
+                {"input": agent_input, "chat_history": []}
+            )
             await cl.Message(content=res["output"]).send()
     else:
         messages = [HumanMessage(content=message.content)]
@@ -407,9 +420,13 @@ async def main(message: cl.Message):
                 ),
                 HumanMessage(content=message.content),
             ]
-        res = await llm.ainvoke(
-            messages,
-            config=RunnableConfig(callbacks=[cb])
-        )
-        if not cb.has_streamed_final_answer:
-             await cl.Message(content=res.content).send()
+        
+        # 纯 LLM 模式：使用 Chainlit 原生流式输出
+        msg = cl.Message(content="")
+        await msg.send()
+        
+        async for chunk in llm.astream(messages):
+            if hasattr(chunk, 'content'):
+                await msg.stream_token(chunk.content)
+        
+        await msg.update()

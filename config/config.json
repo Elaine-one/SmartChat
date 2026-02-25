@@ -67,7 +67,7 @@
     "agent": {
         "max_iterations": 20,
         "max_execution_time": 180,
-        "early_stopping_method": "generate",
+        "early_stopping_method": "force",
         "handle_parsing_errors": "输出格式不符合要求，请严格遵循 Thought/Action/Action Input/Observation/Final Answer 格式。",
         "verbose": true
     },

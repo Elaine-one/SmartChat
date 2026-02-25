@@ -1,0 +1,369 @@
+{
+  "weather": {
+    "name": "天气查询",
+    "description": "用于查询天气预报、实时天气信息",
+    "links": [
+      {
+        "url": "https://tianqi.2345.com/",
+        "name": "2345天气网",
+        "description": "提供全国各城市天气预报和实时天气详情，支持拼音搜索",
+        "keywords": ["实时天气", "小时预报", "温度"],
+        "city_url_template": "https://tianqi.2345.com/{city_pinyin}/"
+      },
+      {
+        "url": "https://www.qweather.com/",
+        "name": "和风天气",
+        "description": "提供精准的天气数据和服务，支持多语言",
+        "keywords": ["天气", "API", "气象数据"]
+      }
+    ]
+  },
+  "news": {
+    "name": "新闻资讯",
+    "description": "用于查询最新新闻、热点资讯",
+    "links": [
+      {
+        "url": "https://news.baidu.com/",
+        "name": "百度新闻",
+        "description": "综合新闻聚合平台，提供各类新闻资讯",
+        "keywords": ["新闻", "头条", "热点", "资讯"]
+      },
+      {
+        "url": "https://www.sina.com.cn/",
+        "name": "新浪新闻",
+        "description": "新浪新闻门户，提供即时新闻和深度报道",
+        "keywords": ["新闻", "报道", "时事"]
+      },
+      {
+        "url": "https://www.thepaper.cn/",
+        "name": "澎湃新闻",
+        "description": "专注原创新闻和深度报道",
+        "keywords": ["原创", "深度", "调查"]
+      },
+      {
+        "url": "http://www.xinhuanet.com/",
+        "name": "新华网",
+        "description": "新华社主办的国家级新闻网站",
+        "keywords": ["官方", "权威", "时政"]
+      },
+      {
+        "url": "http://www.people.com.cn/",
+        "name": "人民网",
+        "description": "人民日报社主办的新闻网站",
+        "keywords": ["人民日报", "时政", "评论"]
+      },
+      {
+        "url": "https://news.cctv.com/",
+        "name": "央视新闻",
+        "description": "中央电视台新闻频道官方网站",
+        "keywords": ["视频", "新闻联播", "焦点访谈"]
+      }
+    ]
+  },
+  "tech": {
+    "name": "技术文档",
+    "description": "用于查询编程语言、框架、技术文档",
+    "links": [
+      {
+        "url": "https://docs.python.org/zh-cn/3/",
+        "name": "Python 官方文档",
+        "description": "Python 编程语言官方文档",
+        "keywords": ["Python", "编程", "文档", "教程"]
+      },
+      {
+        "url": "https://developer.mozilla.org/zh-CN/",
+        "name": "MDN Web 文档",
+        "description": "Web 开发技术文档，涵盖 HTML、CSS、JavaScript",
+        "keywords": ["Web", "HTML", "CSS", "JavaScript", "前端"]
+      },
+      {
+        "url": "https://react.dev/",
+        "name": "React 官方文档",
+        "description": "React 框架官方文档和教程",
+        "keywords": ["React", "前端", "框架", "组件"]
+      },
+      {
+        "url": "https://vuejs.org/",
+        "name": "Vue 官方文档",
+        "description": "Vue 框架官方文档和指南",
+        "keywords": ["Vue", "前端", "框架", "组件"]
+      },
+      {
+        "url": "https://docs.docker.com/",
+        "name": "Docker 文档",
+        "description": "Docker 容器化平台的官方文档",
+        "keywords": ["Docker", "容器", "镜像", "部署"]
+      },
+      {
+        "url": "https://kubernetes.io/zh-cn/docs/",
+        "name": "Kubernetes 文档",
+        "description": "Kubernetes 容器编排系统的官方文档",
+        "keywords": ["K8s", "容器编排", "云原生"]
+      },
+      {
+        "url": "https://www.w3schools.com/",
+        "name": "W3Schools",
+        "description": "Web 技术在线教程，适合初学者",
+        "keywords": ["教程", "HTML", "CSS", "SQL"]
+      },
+      {
+        "url": "https://stackoverflow.com/",
+        "name": "Stack Overflow",
+        "description": "程序员问答社区，解决技术问题",
+        "keywords": ["问答", "编程", "解决方案"]
+      }
+    ]
+  },
+  "encyclopedia": {
+    "name": "百科知识",
+    "description": "用于查询百科知识、概念解释",
+    "links": [
+      {
+        "url": "https://baike.baidu.com/",
+        "name": "百度百科",
+        "description": "中文百科全书，提供各类知识条目",
+        "keywords": ["百科", "知识", "定义", "解释"]
+      },
+      {
+        "url": "https://zh.wikipedia.org/",
+        "name": "中文维基百科",
+        "description": "自由的百科全书",
+        "keywords": ["百科", "知识", "条目"]
+      },
+      {
+        "url": "https://www.britannica.com/",
+        "name": "大英百科全书",
+        "description": "权威的英文百科全书",
+        "keywords": ["百科", "英文", "权威"]
+      }
+    ]
+  },
+  "finance": {
+    "name": "财经金融",
+    "description": "用于查询股票、基金、财经资讯",
+    "links": [
+      {
+        "url": "https://finance.sina.com.cn/",
+        "name": "新浪财经",
+        "description": "提供股票、基金、财经新闻",
+        "keywords": ["股票", "基金", "财经", "投资"]
+      },
+      {
+        "url": "https://xueqiu.com/",
+        "name": "雪球",
+        "description": "股票投资社区和资讯平台",
+        "keywords": ["股票", "投资", "社区"]
+      },
+      {
+        "url": "https://www.eastmoney.com/",
+        "name": "东方财富网",
+        "description": "专业的财经门户网站，提供行情数据",
+        "keywords": ["股票", "行情", "数据", "财经"]
+      },
+      {
+        "url": "https://www.cnbc.com/",
+        "name": "CNBC",
+        "description": "全球财经新闻电视台官网",
+        "keywords": ["财经", "国际", "商业"]
+      }
+    ]
+  },
+  "travel": {
+    "name": "旅游出行",
+    "description": "用于查询旅游攻略、景点介绍、酒店预订",
+    "links": [
+      {
+        "url": "https://www.ctrip.com/",
+        "name": "携程旅行",
+        "description": "中国领先的在线旅游服务平台",
+        "keywords": ["机票", "酒店", "旅游", "攻略"]
+      },
+      {
+        "url": "https://www.mafengwo.cn/",
+        "name": "马蜂窝",
+        "description": "旅游攻略分享社区，提供游记和景点信息",
+        "keywords": ["攻略", "游记", "自由行"]
+      },
+      {
+        "url": "https://www.tripadvisor.com/",
+        "name": "Tripadvisor",
+        "description": "全球知名的旅游点评网站",
+        "keywords": ["点评", "酒店", "餐厅", "景点"]
+      }
+    ]
+  },
+  "health": {
+    "name": "健康医疗",
+    "description": "用于查询医疗健康信息、疾病知识、养生保健",
+    "links": [
+      {
+        "url": "https://www.dxy.cn/",
+        "name": "丁香园",
+        "description": "医学专业网站，提供医学资讯和健康知识",
+        "keywords": ["医学", "健康", "疾病", "药品"]
+      },
+      {
+        "url": "https://www.39.net/",
+        "name": "39健康网",
+        "description": "综合健康门户，提供健康资讯和在线咨询",
+        "keywords": ["健康", "养生", "疾病查询"]
+      },
+      {
+        "url": "https://www.webmd.com/",
+        "name": "WebMD",
+        "description": "美国权威的健康资讯网站",
+        "keywords": ["health", "medicine", "symptoms"]
+      }
+    ]
+  },
+  "education": {
+    "name": "教育学习",
+    "description": "用于查询在线课程、学习资源、学术资料",
+    "links": [
+      {
+        "url": "https://www.icourse163.org/",
+        "name": "中国大学MOOC",
+        "description": "国内优质在线课程平台，提供高校课程",
+        "keywords": ["MOOC", "大学课程", "在线学习"]
+      },
+      {
+        "url": "https://open.163.com/",
+        "name": "网易公开课",
+        "description": "提供国内外名校公开课视频",
+        "keywords": ["公开课", "TED", "名校"]
+      },
+      {
+        "url": "https://www.khanacademy.org/",
+        "name": "可汗学院",
+        "description": "非营利教育机构，提供免费课程",
+        "keywords": ["数学", "科学", "免费课程"]
+      },
+      {
+        "url": "https://scholar.google.com/",
+        "name": "Google Scholar",
+        "description": "学术搜索引擎，检索论文、专利",
+        "keywords": ["学术", "论文", "引用"]
+      }
+    ]
+  },
+  "entertainment": {
+    "name": "娱乐休闲",
+    "description": "用于查询电影、音乐、游戏、综艺等娱乐资讯",
+    "links": [
+      {
+        "url": "https://movie.douban.com/",
+        "name": "豆瓣电影",
+        "description": "电影评分和评论社区",
+        "keywords": ["电影", "评分", "影评"]
+      },
+      {
+        "url": "https://www.imdb.com/",
+        "name": "IMDb",
+        "description": "互联网电影数据库，提供电影资料和评分",
+        "keywords": ["movie", "rating", "cast"]
+      },
+      {
+        "url": "https://www.bilibili.com/",
+        "name": "哔哩哔哩",
+        "description": "年轻人喜爱的视频弹幕网站，涵盖番剧、音乐、游戏",
+        "keywords": ["弹幕", "动画", "游戏", "鬼畜"]
+      },
+      {
+        "url": "https://music.163.com/",
+        "name": "网易云音乐",
+        "description": "音乐播放器与社交平台",
+        "keywords": ["音乐", "歌单", "评论"]
+      }
+    ]
+  },
+  "sports": {
+    "name": "体育竞技",
+    "description": "用于查询体育新闻、赛事直播、运动数据",
+    "links": [
+      {
+        "url": "https://sports.qq.com/",
+        "name": "腾讯体育",
+        "description": "腾讯旗下的体育频道，提供赛事报道和视频直播",
+        "keywords": ["NBA", "足球", "直播"]
+      },
+      {
+        "url": "https://www.hupu.com/",
+        "name": "虎扑",
+        "description": "体育迷社区，专注篮球、足球等运动",
+        "keywords": ["篮球", "足球", "社区"]
+      },
+      {
+        "url": "https://www.espn.com/",
+        "name": "ESPN",
+        "description": "全球领先的体育媒体",
+        "keywords": ["sports", "news", "scores"]
+      }
+    ]
+  },
+  "tools": {
+    "name": "实用工具",
+    "description": "用于查询在线工具、计算器、转换器",
+    "links": [
+      {
+        "url": "https://tool.lu/",
+        "name": "在线工具",
+        "description": "提供各类在线工具，如JSON格式化、时间戳转换",
+        "keywords": ["工具", "格式化", "转换"]
+      },
+      {
+        "url": "https://www.wolframalpha.com/",
+        "name": "Wolfram Alpha",
+        "description": "计算知识引擎，可解答数学、科学问题",
+        "keywords": ["计算", "数学", "知识引擎"]
+      },
+      {
+        "url": "https://www.unitconverters.net/",
+        "name": "Unit Converters",
+        "description": "在线单位换算工具",
+        "keywords": ["单位换算", "转换器"]
+      }
+    ]
+  },
+  "government": {
+    "name": "政府服务",
+    "description": "用于查询政府政策、公共服务信息",
+    "links": [
+      {
+        "url": "http://www.gov.cn/",
+        "name": "中国政府网",
+        "description": "中华人民共和国中央人民政府门户网站",
+        "keywords": ["政府", "政策", "公告"]
+      },
+      {
+        "url": "http://www.stats.gov.cn/",
+        "name": "国家统计局",
+        "description": "官方统计数据发布平台",
+        "keywords": ["统计", "数据", "经济"]
+      },
+      {
+        "url": "https://wenshu.court.gov.cn/",
+        "name": "中国裁判文书网",
+        "description": "最高人民法院的裁判文书公开平台",
+        "keywords": ["法律", "裁判文书", "案例"]
+      }
+    ]
+  },
+  "legal": {
+    "name": "法律法规",
+    "description": "用于查询法律条文、案例分析",
+    "links": [
+      {
+        "url": "http://www.npc.gov.cn/",
+        "name": "中国人大网",
+        "description": "全国人大官网，提供法律法规数据库",
+        "keywords": ["法律", "人大", "立法"]
+      },
+      {
+        "url": "https://pkulaw.com/",
+        "name": "北大法宝",
+        "description": "法律信息综合服务平台",
+        "keywords": ["法律检索", "案例", "法规"]
+      }
+    ]
+  }
+}
